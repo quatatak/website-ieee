@@ -9,7 +9,13 @@ const App: React.FC = () => {
   return (
     <Router>
       <Navbar />
+
       <main style={{ padding: "1rem" }}>
+        <div>
+          <h1>Welcome to the NU IEEE Student Branch</h1>
+          <p>Advancing technology for humanity</p>
+        </div>
+
         <Routes>
           <Route path="/about" element={<About />} />
           <Route path="/team" element={<Team />} />

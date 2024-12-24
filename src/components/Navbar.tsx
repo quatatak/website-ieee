@@ -1,23 +1,23 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const Navbar: React.FC=()=>{
-    return (
-        <nav style={styles.nav}>
-            <ul style={styles.ul}>
-                <li style={styles.li}>
-                    <Link to="/about">About</Link>
-                </li>
-                <li style={styles.li}>
-                    <Link to="/team">Team</Link>
+const Navbar: React.FC = () => {
+  return (
+    <nav style={styles.nav}>
+      <ul style={styles.ul}>
+        <li style={styles.li}>
+          <Link to="/about">About</Link>
         </li>
         <li style={styles.li}>
-            <Link to="/events">Events</Link>
-            </li>
-            </ul>
-        </nav>
-    );
-}
+          <Link to="/team">Team</Link>
+        </li>
+        <li style={styles.li}>
+          <Link to="/events">Events</Link>
+        </li>
+      </ul>
+    </nav>
+  );
+};
 
 const styles = {
   nav: {
@@ -36,4 +36,4 @@ const styles = {
   },
 };
 
-export default Navbar
+export default Navbar;
