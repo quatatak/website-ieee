@@ -27,3 +27,4 @@ dist-ssr
 .env
 .tmp
 .swp
+/ieee-web/ieee-web.client/node_modules/
