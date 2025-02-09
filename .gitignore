@@ -8,7 +8,6 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules/*
-dist
 dist-ssr
 *.local
 
@@ -22,8 +21,9 @@ web-ieee/bin
 *.suo
 *.ntvs*
 *.njsproj
-*.sln
+*.user
 *.sw?
+web-ieee/.vs
 
 
 .env
