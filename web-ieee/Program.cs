@@ -1,3 +1,4 @@
+using Azure.Storage.Blobs;
 using Microsoft.EntityFrameworkCore;
 using web_ieee.Data;
 using web_ieee.Models;
@@ -15,6 +16,11 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+
+// Add blob storage service
+var blobStorageConnectionString = builder.Configuration["BlobStorageConnection"] ??
+                                  throw new InvalidOperationException("Blob Storage connection string not found");
+builder.Services.AddSingleton(_ => new BlobServiceClient(blobStorageConnectionString));
 
 var app = builder.Build();
 
