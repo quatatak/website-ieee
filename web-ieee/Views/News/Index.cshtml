@@ -1,48 +1,91 @@
-@model IEnumerable<web_ieee.Models.News>
-
+@model IEnumerable<News>
 @{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "News";
 }
 
-<h1>Index</h1>
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Latest News</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                Photo
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                <image src="@item.PhotoLink">Photo</image>
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <div class="d-flex justify-content-between align-items-center">
+        <h4>All News</h4>
+        <a class="btn btn-primary" asp-action="Create">➕ Create News</a>
+    </div>
+
+    <!-- News Table -->
+    <div class="table-responsive mt-3">
+        <table class="table table-hover table-bordered">
+            <thead class="table-dark">
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Photo</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var news in Model)
+            {
+                <tr>
+                    <td>@news.Title</td>
+                    <td>@news.Description</td>
+                    <td>
+                        <img src="@news.PhotoLink" alt="News Image" class="news-img">
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- News Cards -->
+    <div class="row mt-4">
+        @foreach (var news in Model)
+        {
+            <div class="col-md-4">
+                <div class="card shadow-sm mb-4">
+                    <img src="@news.PhotoLink" class="card-img-top" alt="News Image">
+                    <div class="card-body">
+                        <h5 class="card-title">@news.Title</h5>
+                        <p class="card-text">@news.Description</p>
+                        <a href="#" class="btn btn-outline-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    /* Table Styling */
+    .table {
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    .table th, .table td {
+        text-align: center;
+        vertical-align: middle;
+        padding: 12px;
+    }
+    .table th {
+        background-color: #343a40;
+        color: white;
+    }
+    .table-hover tbody tr:hover {
+        background-color: #f8f9fa;
+        transition: 0.3s;
+    }
+    .news-img {
+        width: 100px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    /* Card Styling */
+    .card {
+        border-radius: 12px;
+        transition: transform 0.3s ease-in-out;
+    }
+    .card:hover {
+        transform: scale(1.05);
+    }
+</style>
