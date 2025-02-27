@@ -40,7 +40,8 @@ public class NewsController(ApplicationDbContext dbContext, BlobServiceClient bl
     {
         if (!ModelState.IsValid)
         {
-            return Problem();
+            var errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage);
+            return Problem($"Model state is not valid. Errors: {string.Join(", ", errors)}");
         }
         var fileToUpload = newsViewModel.PhotoFile;
         var containerClient = blobService.GetBlobContainerClient("images");
@@ -56,10 +57,18 @@ public class NewsController(ApplicationDbContext dbContext, BlobServiceClient bl
             Title = newsViewModel.Title,
             Description = newsViewModel.Description,
             PhotoLink = blobClient.Uri.AbsoluteUri,
+            CreatedAt = DateTime.Now.ToUniversalTime(),
         });
         await dbContext.SaveChangesAsync();
 
         var home = RedirectToAction("Index", "News");
         return home;
+    }
+
+    [HttpGet]
+    [ActionName("Create")]
+    public IActionResult CreateGet()
+    {
+        return View();
     }
 }
