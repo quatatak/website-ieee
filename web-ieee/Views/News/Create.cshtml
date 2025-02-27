@@ -1,41 +1,61 @@
 @model web_ieee.ViewModels.NewsViewModel
 
 @{
-    ViewData["Title"] = "Create";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Create News";
 }
 
-<h1>Create</h1>
+<div class="container mt-4">
+    <h2 class="text-center mb-4">📰 Create a News Post</h2>
 
-<h4>News</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create" enctype="multipart/form-data">
+    <div class="card shadow-lg p-4">
+        <form asp-action="Create" method="post" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger"></span>
+            <div class="mb-3">
+                <label class="form-label">Title</label>
+                <input type="text" class="form-control" asp-for="Title" required placeholder="Enter news title...">
             </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
+
+            <div class="mb-3">
+                <label class="form-label">Description</label>
+                <textarea class="form-control" asp-for="Description" rows="4" required placeholder="Enter news description..."></textarea>
             </div>
-            <div class="form-group">
-                <label asp-for="PhotoFile" class="control-label">News Photo</label>
-                <input type="file" asp-for="PhotoFile" class="form-control-file" accept="image/*" />
-                <span asp-validation-for="PhotoFile" class="text-danger">Something is wrong</span>
+
+            <div class="mb-3">
+                <label asp-for="PhotoFile" class="form-label">News Photo</label>
+                <input type="file" asp-for="PhotoFile" class="form-control" required accept="image/*">
             </div>
-            <div class="form-group">
-                <button type="submit" value="Create" class="btn btn-primary">Upload</button>
+    
+            <div class="text-center">
+                <button type="submit" class="btn btn-success px-4 py-2">Publish</button>
+                <a asp-action="Index" class="btn btn-outline-secondary px-4 py-2">⬅️ Back to List</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
+<style>
+    .card {
+        border-radius: 12px;
+        max-width: 600px;
+        margin: auto;
+    }
+    .form-control {
+        border-radius: 8px;
+        padding: 12px;
+        font-size: 16px;
+    }
+    .btn {
+        border-radius: 8px;
+        font-weight: bold;
+    }
+    .btn-success {
+        background-color: #28a745;
+        border: none;
+    }
+    .btn-success:hover {
+        background-color: #218838;
+    }
+    .btn-outline-secondary:hover {
+        background-color: #ddd;
+    }
+</style>
