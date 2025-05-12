@@ -3,20 +3,28 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "web-ieee", "web-ieee\web-ieee.csproj", "{08A933B7-DEA6-43C6-AB15-28FBE9B808C5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebIEEE.Server", "src\WebIEEE.Server\WebIEEE.Server.csproj", "{32049EE4-C222-4FA2-8A76-23120CB21324}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "webieee.client", "src\webieee.client\webieee.client.esproj", "{A943B665-7716-44CF-892C-1C54550BD29C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32049EE4-C222-4FA2-8A76-23120CB21324}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32049EE4-C222-4FA2-8A76-23120CB21324}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32049EE4-C222-4FA2-8A76-23120CB21324}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32049EE4-C222-4FA2-8A76-23120CB21324}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A943B665-7716-44CF-892C-1C54550BD29C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A943B665-7716-44CF-892C-1C54550BD29C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A943B665-7716-44CF-892C-1C54550BD29C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A943B665-7716-44CF-892C-1C54550BD29C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A943B665-7716-44CF-892C-1C54550BD29C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A943B665-7716-44CF-892C-1C54550BD29C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{08A933B7-DEA6-43C6-AB15-28FBE9B808C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{08A933B7-DEA6-43C6-AB15-28FBE9B808C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{08A933B7-DEA6-43C6-AB15-28FBE9B808C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{08A933B7-DEA6-43C6-AB15-28FBE9B808C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
