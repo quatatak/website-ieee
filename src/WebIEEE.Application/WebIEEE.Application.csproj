@@ -7,8 +7,22 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="Mapster" Version="7.4.0" />
+      <PackageReference Include="Mapster.DependencyInjection" Version="1.0.1" />
       <PackageReference Include="MediatR" Version="12.5.0" />
       <PackageReference Include="MediatR.Contracts" Version="2.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Commands\News\CreateNews\" />
+      <Folder Include="Commands\News\DeleteNews\" />
+      <Folder Include="Commands\News\UpdateNews\" />
+      <Folder Include="Quieries\News\GetNews\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\WebIEEE.Contracts\WebIEEE.Contracts.csproj" />
+      <ProjectReference Include="..\WebIEEE.Infrastructure\WebIEEE.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>

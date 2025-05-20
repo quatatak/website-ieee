@@ -1,0 +1,25 @@
+﻿using System.Reflection;
+using Mapster;
+using Microsoft.Extensions.DependencyInjection;
+using WebIEEE.Application.Mappings;
+
+namespace WebIEEE.Application;
+
+public static class DependencyInjection
+{
+    public static IServiceCollection AddApplication(this IServiceCollection services)
+    {
+        services.AddMediatR(cf =>
+        {
+            cf.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
+        });
+        
+        MappingConfig.Configure();
+
+        var config = TypeAdapterConfig.GlobalSettings;
+        config.Scan(Assembly.GetEntryAssembly());
+        services.AddSingleton(config);
+
+        return services;
+    }
+}

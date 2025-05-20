@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using WebIEEE.Infrastructure;
+using WebIEEE.Application;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Add services from WebIEEE.Application
+builder.Services.AddApplication();
+
+// Add DbContext
 var connectionString = builder.Configuration["PostgresDb"] ??
                        throw new InvalidOperationException("Database connection string not found");
 builder.Services.AddDbContext<WebIeeeDbContext>(opt =>
