@@ -26,6 +26,7 @@
     <ProjectReference Include="..\webieee.client\webieee.client.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+    <ProjectReference Include="..\WebIEEE.Infrastructure\WebIEEE.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -42,19 +43,41 @@
     <Content Include="bin\Debug\net8.0\WebIEEE.Server.exe" />
     <Content Include="bin\Debug\net8.0\WebIEEE.Server.pdb" />
     <Content Include="bin\Debug\net8.0\WebIEEE.Server.runtimeconfig.json" />
-    <Content Remove="bin\**" />
+    <Content Include="obj\Debug\net8.0\apphost.exe" />
+    <Content Include="obj\Debug\net8.0\refint\WebIEEE.Server.dll" />
+    <Content Include="obj\Debug\net8.0\ref\WebIEEE.Server.dll" />
+    <Content Include="obj\Debug\net8.0\spa.proxy.json" />
+    <Content Include="obj\Debug\net8.0\staticwebassets.build.json" />
+    <Content Include="obj\Debug\net8.0\staticwebassets\msbuild.build.WebIEEE.Server.props" />
+    <Content Include="obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.WebIEEE.Server.props" />
+    <Content Include="obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.WebIEEE.Server.props" />
+    <Content Include="obj\Debug\net8.0\WebIEEE..797EB3E4.Up2Date" />
+    <Content Include="obj\Debug\net8.0\WebIEEE.Server.AssemblyInfoInputs.cache" />
+    <Content Include="obj\Debug\net8.0\WebIEEE.Server.assets.cache" />
+    <Content Include="obj\Debug\net8.0\WebIEEE.Server.csproj.AssemblyReference.cache" />
+    <Content Include="obj\Debug\net8.0\WebIEEE.Server.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\net8.0\WebIEEE.Server.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\net8.0\WebIEEE.Server.dll" />
+    <Content Include="obj\Debug\net8.0\WebIEEE.Server.GeneratedMSBuildEditorConfig.editorconfig" />
+    <Content Include="obj\Debug\net8.0\WebIEEE.Server.genruntimeconfig.cache" />
+    <Content Include="obj\Debug\net8.0\WebIEEE.Server.MvcApplicationPartsAssemblyInfo.cache" />
+    <Content Include="obj\Debug\net8.0\WebIEEE.Server.pdb" />
+    <Content Include="obj\Debug\net8.0\WebIEEE.Server.sourcelink.json" />
+    <Content Include="obj\project.assets.json" />
+    <Content Include="obj\project.nuget.cache" />
+    <Content Include="obj\project.packagespec.json" />
+    <Content Include="obj\rider.project.model.nuget.info" />
+    <Content Include="obj\rider.project.restore.info" />
+    <Content Include="obj\WebIEEE.Server.csproj.nuget.dgspec.json" />
+    <Content Include="obj\WebIEEE.Server.csproj.nuget.g.props" />
+    <Content Include="obj\WebIEEE.Server.csproj.nuget.g.targets" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="bin\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Remove="bin\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="bin\**" />
+    <Compile Include="obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" />
+    <Compile Include="obj\Debug\net8.0\WebIEEE.Server.AssemblyInfo.cs" />
+    <Compile Include="obj\Debug\net8.0\WebIEEE.Server.GlobalUsings.g.cs" />
+    <Compile Include="obj\Debug\net8.0\WebIEEE.Server.MvcApplicationPartsAssemblyInfo.cs" />
   </ItemGroup>
 
 </Project>
