@@ -24,6 +24,7 @@ x86/
 bld/
 */[Bb]in/
 src/WebIEEE.Server/bin
+src/WebIEEE.Server/obj
 [Oo]bj/
 [Ll]og/
 *.suo
