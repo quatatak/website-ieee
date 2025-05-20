@@ -10,6 +10,7 @@ public class MappingConfig
     {
         TypeAdapterConfig<List<News>, GetNewsResponse>.NewConfig()
             .Map(dest => dest.NewsDtos, src => src);
+        TypeAdapterConfig<News, GetNewsByIdResponse>.NewConfig()
+            .Map(dest => dest.NewsDto, src => src);
     }
-    
 }

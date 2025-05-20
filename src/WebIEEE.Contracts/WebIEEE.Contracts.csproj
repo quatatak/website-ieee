@@ -10,4 +10,8 @@
       <Folder Include="Requests\" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\WebIEEE.Domain\WebIEEE.Domain.csproj" />
+    </ItemGroup>
+
 </Project>

@@ -17,7 +17,6 @@
       <Folder Include="Commands\News\CreateNews\" />
       <Folder Include="Commands\News\DeleteNews\" />
       <Folder Include="Commands\News\UpdateNews\" />
-      <Folder Include="Quieries\News\GetNews\" />
     </ItemGroup>
 
     <ItemGroup>
