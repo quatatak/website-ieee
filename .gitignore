@@ -26,6 +26,11 @@ bld/
 src/WebIEEE.Server/bin
 [Oo]bj/
 [Ll]og/
+*.suo
+*.user
+_ReSharper.*
+bin
+obj
 
 # Visual Studio 2015 cache/options directory
 .vs/
