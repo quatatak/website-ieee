@@ -1,12 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using WebIEEE.Infrastructure;
 using WebIEEE.Application;
+using WebIEEE.Server.Modules;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
-builder.Services.AddControllers();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -37,10 +36,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
-
-app.MapControllers();
-
 app.MapFallbackToFile("/index.html");
+
+// Add modules
+app.AddNewsModule();
 
 app.Run();

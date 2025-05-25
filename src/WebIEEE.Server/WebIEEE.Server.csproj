@@ -29,6 +29,7 @@
     <ProjectReference Include="..\webieee.client\webieee.client.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+    <ProjectReference Include="..\WebIEEE.Contracts\WebIEEE.Contracts.csproj" />
     <ProjectReference Include="..\WebIEEE.Infrastructure\WebIEEE.Infrastructure.csproj" />
   </ItemGroup>
 
