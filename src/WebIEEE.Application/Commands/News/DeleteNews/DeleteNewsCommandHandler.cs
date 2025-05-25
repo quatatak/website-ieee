@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using WebIEEE.Contracts.Exceptions;
 using WebIEEE.Infrastructure;
 
 namespace WebIEEE.Application.Commands.News.DeleteNews;
@@ -20,7 +21,7 @@ public class DeleteNewsCommandHandler : IRequestHandler<DeleteNewsCommand, Unit>
 
         if (newsToDelete is null)
         {
-            throw new InvalidOperationException("News to delete not found");
+            throw new NotFoundException($"{nameof(Domain.Entities.News)} with {nameof(Domain.Entities.News.Id)}: {request.Id} was not found");
         }
         
         _dbContext.News.Remove(newsToDelete);

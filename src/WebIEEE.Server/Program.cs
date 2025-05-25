@@ -13,6 +13,7 @@ builder.Services.AddSwaggerGen();
 
 // Add services from WebIEEE.Application
 builder.Services.AddApplication();
+builder.Services.AddExceptionHandler<ExceptionHandler>();
 
 // Add DbContext
 var connectionString = builder.Configuration["PostgresDb"] ??
@@ -37,6 +38,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.MapFallbackToFile("/index.html");
+
+app.UseExceptionHandler(_ => { });
 
 // Add modules
 app.AddNewsModule();

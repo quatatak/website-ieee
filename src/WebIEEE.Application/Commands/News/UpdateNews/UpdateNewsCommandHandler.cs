@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
+using WebIEEE.Contracts.Exceptions;
 using WebIEEE.Infrastructure;
 
 namespace WebIEEE.Application.Commands.News.UpdateNews;
@@ -19,7 +20,7 @@ public class UpdateNewsCommandHandler : IRequestHandler<UpdateNewsCommand, Unit>
 
         if (newsToUpdate is null)
         {
-            throw new InvalidOperationException("News to update not found");
+            throw new NotFoundException($"{nameof(Domain.Entities.News)} with {nameof(Domain.Entities.News.Id)}: {request.Id} was not found");
         }
         
         newsToUpdate.Title = request.Title;
