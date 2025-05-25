@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using FluentValidation;
 using Mapster;
 using Microsoft.Extensions.DependencyInjection;
 using WebIEEE.Application.Mappings;
@@ -20,6 +21,8 @@ public static class DependencyInjection
         config.Scan(Assembly.GetEntryAssembly());
         services.AddSingleton(config);
 
+        services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+        
         return services;
     }
 }
