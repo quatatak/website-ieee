@@ -2,6 +2,7 @@
 using FluentValidation;
 using Mapster;
 using Microsoft.Extensions.DependencyInjection;
+using WebIEEE.Application.Behaviors;
 using WebIEEE.Application.Mappings;
 
 namespace WebIEEE.Application;
@@ -13,6 +14,7 @@ public static class DependencyInjection
         services.AddMediatR(cf =>
         {
             cf.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
+            cf.AddOpenBehavior(typeof(ValidationBehavior<,>));
         });
         
         MappingConfig.Configure();
